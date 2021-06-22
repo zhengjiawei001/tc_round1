@@ -402,7 +402,7 @@ def main():
     output_dir = '../user_data/tmp_data/pretrain_output/whole_word_mask_bert_output'
 
     tokenizer = BertTokenizer.from_pretrained('../user_data/vocab_.txt')
-    data = read_data(raw_data_path, tokenizer, debug=False)
+    data = read_data(raw_data_path, tokenizer, debug=True)
 
     train_dataset = TcDataset(data)
 

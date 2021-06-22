@@ -6,6 +6,10 @@ $ conda activate tianchi
 $ pip install -r requirements.txt
 ```
 ### 2. 数据预处理
+#数据下载地址
+数据链接: https://pan.baidu.com/s/1pXq9VJAscubOC4Wxk2Effg  密码: 17bt
+数据下载之后，根据数据名字中的round1和round2分别放到tcdata/nlp_round1_data和tcdata/nlp_round2_data下
+
 进入 code 目录，运行下面的命令
 ```shell
 $ bash preprocess.sh
@@ -48,3 +52,8 @@ $ bash test.sh
 2.在预训练阶段优化mask方法，并且为了提供速度和精度采用了混合精度计算的方法（提高速度）和对抗训练的方法（提高精度）
 3. 在每个模型的预测阶段，预测了b榜中的原始数据和对偶数据（将b榜中的样本的两句话互换位置），并进行了平均
 4.采用了模型融合的方法，将三种模型的结果按照不同比例进行了加权平均，从而得到最终结果
+
+
+##模型链接
+nezha-cn-base链接：https://github.com/lonePatient/NeZha_Chinese_PyTorch
+bert-base-chinese链接：https://blog.csdn.net/sdaujz/article/details/107547503

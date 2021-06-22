@@ -54,8 +54,8 @@ def roc_score(labels: list, preds: list,
 def read_data(config: dict, tokenizer: BertTokenizer) -> str:
     train_file_path = os.path.join('../tcdata/nlp_round2_data/pretrain_data.tsv')
     test_file_path = os.path.join('../tcdata/nlp_round1_data/gaiic_track3_round1_testB_20210317.tsv')
-    train_df = pd.read_csv(train_file_path, header=None, sep='\t')
-    test_df = pd.read_csv(test_file_path, header=None, sep='\t')
+    train_df = pd.read_csv(train_file_path, header=None, sep='\t').head(1000)
+    test_df = pd.read_csv(test_file_path, header=None, sep='\t').head(1000)
 
     data_df = {'train': train_df, 'test': test_df}
     processed_data = {}

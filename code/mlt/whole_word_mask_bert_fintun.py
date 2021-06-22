@@ -16,10 +16,11 @@ from torch import multiprocessing
 from transformers import BertConfig, BertForSequenceClassification
 from transformers import BertTokenizer
 
-from .utils import load_data, seed_everyone, read_data, load_cv_data, train, predict, bert_train
+from .utils import load_data, seed_everyone, read_data, load_cv_data, predict, bert_train
 
 multiprocessing.set_sharing_strategy('file_system')
 os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+
 
 def main():
     config = {
@@ -92,7 +93,7 @@ def main():
             print('\n>>> Loading best model ...')
             bert_config = BertConfig.from_pretrained(config['model_path'])
             model = BertForSequenceClassification.from_pretrained(best_model_path, config=bert_config
-                                                )
+                                                                  )
 
             model.to(config['device'])
 
